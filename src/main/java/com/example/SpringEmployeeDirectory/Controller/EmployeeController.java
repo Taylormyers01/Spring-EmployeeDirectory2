@@ -36,4 +36,9 @@ public class EmployeeController {
         return new ResponseEntity<>(employeeService.addManager(id, e), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/employeebymanager/{id}")
+    public ResponseEntity<List<Employee>> employeeByManager(@PathVariable Long id){
+        return new ResponseEntity<>(employeeService.employeeByManager(id), HttpStatus.ACCEPTED);
+    }
+
 }

@@ -35,4 +35,14 @@ public class DepartmentServices {
         }
         return null;
     }
+
+
+    public Department updateName(Long id, Department d) {
+        if(departmentRepository.findById(id).isPresent()){
+            Department holdDpt = departmentRepository.findById(id).get();
+            holdDpt.setDepartmentName(d.getDepartmentName());
+            return departmentRepository.save(holdDpt);
+        }
+        return null;
+    }
 }

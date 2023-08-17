@@ -39,4 +39,11 @@ public class EmployeeService {
         }
         return null;
     }
+
+    public List<Employee> employeeByManager(Long id) {
+        if(employeeRepository.findById(id).isPresent()){
+            return employeeRepository.findAllEmployeesBymanager_id(id);
+        }
+        return null;
+    }
 }

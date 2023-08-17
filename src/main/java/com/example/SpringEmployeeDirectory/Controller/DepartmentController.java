@@ -26,6 +26,10 @@ public class DepartmentController {
         return new ResponseEntity<>(departmentServices.createDepartment(d), HttpStatus.CREATED);
     }
 
+    @PutMapping(value = "/department/{id}/name")
+    public ResponseEntity<Department> updateName(@PathVariable Long id, @RequestBody Department d){
+        return new ResponseEntity<>(departmentServices.updateName(id, d), HttpStatus.ACCEPTED);
+    }
     @PutMapping(value = "/department/{id}/manager")
     public ResponseEntity<Department> setManager(@PathVariable Long id, @RequestBody Employee e){
         return new ResponseEntity<>(departmentServices.setManager(id, e), HttpStatus.ACCEPTED);
