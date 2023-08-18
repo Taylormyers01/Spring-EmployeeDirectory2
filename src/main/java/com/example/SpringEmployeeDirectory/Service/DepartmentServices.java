@@ -45,4 +45,9 @@ public class DepartmentServices {
         }
         return null;
     }
+
+    public List<Employee> updateDepartments(Long id, Long id2) {
+        
+        return null;
+    }
 }

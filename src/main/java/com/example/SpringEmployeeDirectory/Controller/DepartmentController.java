@@ -34,5 +34,9 @@ public class DepartmentController {
     public ResponseEntity<Department> setManager(@PathVariable Long id, @RequestBody Employee e){
         return new ResponseEntity<>(departmentServices.setManager(id, e), HttpStatus.ACCEPTED);
     }
+    @PutMapping(value = "/deptswap/{id}/{id2}")
+    public ResponseEntity<List<Employee>> updateDepartments(@PathVariable Long id, @PathVariable Long id2){
+        return new ResponseEntity<>(departmentServices.updateDepartments(id, id2), HttpStatus.OK);
+    }
 
 }
